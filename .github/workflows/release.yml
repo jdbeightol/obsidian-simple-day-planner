@@ -46,7 +46,7 @@ jobs:
         tag_name: ${{ github.ref }}
         release_name: ${{ github.ref }}
         draft: no
-        pre-release: yes
+        prerelease: yes
     - name: upload
       uses: actions/upload-release-asset@v1
       env:
