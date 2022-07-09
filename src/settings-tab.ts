@@ -66,13 +66,4 @@ export class DayPlannerSettingsTab extends PluginSettingTab {
                 this.plugin.saveData(this.plugin.settings);
                 }));
     }
-
-    private addDocsLink(descEl: DocumentFragment) {
-        const a = document.createElement('a');
-        a.href = 'https://github.com/jdbeightol/obsidian-simple-day-planner/blob/main/README.md';
-        a.text = 'plugin README';
-        a.target = '_blank';
-        descEl.appendChild(a);
-        descEl.appendChild(document.createElement('br'));
-    }
 }
