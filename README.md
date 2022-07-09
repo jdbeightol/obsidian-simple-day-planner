@@ -106,7 +106,7 @@ This is the zoom level to dispaly the timeline. The higher the number, the more 
 
 Custom plugins are only available for Obsidian v0.9.7+.
 
-The current API of this repo targets Obsidian **v0.9.10**.
+The current API of this repo targets Obsidian **v0.14.15**.
 
 This plugin depends on the [Obsidian Daily Note plugin][daily-note].
 
