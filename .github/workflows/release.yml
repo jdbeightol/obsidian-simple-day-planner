@@ -27,9 +27,8 @@ jobs:
       run: npm ci --ignore-scripts
     - name: test
       run: npm test
-    - name: test
-      run: npm test
     - name: build
+      id: build
       run: | 
         npm run build --if-present
         mkdir ${{ env.PLUGIN_NAME }}
@@ -38,6 +37,7 @@ jobs:
         ls
         echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
     - name: release
+      id: release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -45,7 +45,8 @@ jobs:
       with:
         tag_name: ${{ github.ref }}
         release_name: ${{ github.ref }}
-        draft: yes
+        draft: no
+        pre-release: yes
     - name: upload
       uses: actions/upload-release-asset@v1
       env:
