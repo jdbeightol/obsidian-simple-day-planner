@@ -5,7 +5,6 @@ export class DayPlannerSettings {
   nowAndNextInStatusBar: boolean = false;
   showTaskNotification: boolean = false
   timelineZoomLevel: number = TIMELINE_DEFAULT_ZOOM;
-  timelineIcon: string = 'calendar-with-checkmark'
 }
 
 export class NoteForDate {

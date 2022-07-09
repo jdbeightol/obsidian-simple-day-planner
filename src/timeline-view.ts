@@ -25,7 +25,7 @@ export default class TimelineView extends ItemView {
     }
 
     getIcon() {
-        return this.settings.timelineIcon;
+        return "calendar-with-checkmark";
     }
 
     update(summaryData: PlanSummaryData) {
