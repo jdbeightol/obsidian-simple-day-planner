@@ -59,9 +59,4 @@ export default class Parser {
         });
         return results;
     }
-
-    private matchValue(input: any, match: string): boolean {
-        return input?.trim().toLocaleLowerCase() === match;
-    }
-
 }

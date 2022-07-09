@@ -46,7 +46,7 @@ export default class DayPlanner extends Plugin {
 
         this.addCommand({
             id: 'app:show-day-planner-timeline',
-            name: 'Show the Simple Day Planner Timeline',
+            name: 'Show timeline',
             callback: () => this.initLeaf(),
             hotkeys: []
         });

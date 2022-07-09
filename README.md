@@ -54,7 +54,7 @@ The format of the task list items is important as this is what is used to calcul
 
 ### Timeline View
 
-The `Show the Day Planner Timeline` command can be used to add a vertical timeline view to show the tasks for today's plan and a line marking the current time.
+The `Show timeline` command can be used to add a vertical timeline view to show the tasks for today's plan and a line marking the current time.
 
 ![Day Planner Timeline](https://raw.githubusercontent.com/jdbeightol/obsidian-simple-day-planner/main/images/day-planner-timeline.png)
 
