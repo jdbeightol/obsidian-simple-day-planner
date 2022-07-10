@@ -58,8 +58,7 @@ export default class DayPlanner extends Plugin {
         );
 
         this.addSettingTab(new DayPlannerSettingsTab(this.app, this));
-        this.registerInterval(
-        window.setInterval(async () => {
+        this.registerInterval(window.setInterval(async () => {
             try {
                 if(this.file.hasTodayNote()){
                     // console.log('Active note found, starting file processing')
@@ -72,6 +71,12 @@ export default class DayPlanner extends Plugin {
                 console.log(error)
             }
         }, 2000));
+
+        if (this.app.workspace.layoutReady) {
+            this.initLeaf();
+        } else {
+            this.app.workspace.onLayoutReady(() => this.initLeaf());
+        }
     }
 
     initLeaf() {
