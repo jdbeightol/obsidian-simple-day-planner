@@ -1,6 +1,6 @@
 {
   "name": "obsidian-simple-day-planner",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A plugin to help you plan your day —simply!",
   "main": "main.js",
   "scripts": {
