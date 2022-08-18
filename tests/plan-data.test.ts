@@ -13,7 +13,7 @@ describe('plan-data', () => {
     const time = new Date('2021-04-11T11:10:00.507Z');
     const rawTime = '11:10';
     const text = 'meeting';
-    const raw = '- [x] 11:10 meeting';
+    const raw = '- 11:10 meeting';
 
     it('should generate PlanItem with given text', () => {
       const factory = new PlanItemFactory(new DayPlannerSettings());
@@ -30,4 +30,6 @@ describe('plan-data', () => {
       expect(item.raw).to.eql(raw);
     });
   });
+
+  // TODO need a test for sorted plan summary
 });
