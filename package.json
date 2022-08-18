@@ -21,6 +21,7 @@
     "@types/mocha": "^8.2.2",
     "@types/node": "^14.17.3",
     "chai": "^4.3.4",
+    "chai-sorted": "^0.2.0",
     "cross-env": "^7.0.3",
     "fast-check": "^3.1.1",
     "ignore-styles": "^5.0.1",
