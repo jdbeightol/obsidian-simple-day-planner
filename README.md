@@ -82,13 +82,15 @@ The status displayed when the end of the tasks is reached:
 
 ## Configuration
 
-### Status Bar - Circular Progress
+### Status Bar
+
+#### Circular Progress
 
 You can choose to display progress in the status bar with a circular pie chart progress bar to save horizontal space.
 
 ![Circular Progress Bar](https://raw.githubusercontent.com/jdbeightol/obsidian-simple-day-planner/main/images/circular-progress.png)
 
-### Status Bar - Now and Next
+#### Now and Next
 
 You can choose to display the time and start of the text for the current and next task.
 
@@ -106,13 +108,12 @@ This is the zoom level to dispaly the timeline. The higher the number, the more 
 
 Custom plugins are only available for Obsidian v0.9.7+.
 
-The current API of this repo targets Obsidian **v0.14.15**.
+The current API of this repo targets Obsidian **v1.0**.
 
 This plugin depends on the [Obsidian Daily Note plugin][daily-note].
 
 ## For developers
-Pull requests are both welcome and appreciated. 😀
 
-If you would like to contribute to the development of this plugin, please follow the guidelines provided in [CONTRIBUTING.md](CONTRIBUTING.md).
+Issues and pull requests are welcome and appreciated, but it may take time for me to approve and review suggestions or contributions.  If you would like to contribute to the development of this plugin, please follow the guidelines provided in [CONTRIBUTING.md](CONTRIBUTING.md), and please have patience.
 
 [daily-note]: https://help.obsidian.md/Plugins/Daily+notes

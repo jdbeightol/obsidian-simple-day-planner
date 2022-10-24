@@ -19,9 +19,6 @@ export default class StatusBar {
     workspace: Workspace;
     progress: Progress;
     plannerMD: PlannerMarkdown;
-    card: HTMLDivElement;
-    cardCurrent: any;
-    cardNext: any;
     currentTime: string;
     
     constructor(settings: DayPlannerSettings, statusBar:HTMLElement, workspace:Workspace, progress:Progress, plannerMD:PlannerMarkdown, file:DayPlannerFile) {
@@ -37,21 +34,19 @@ export default class StatusBar {
       if(this.statusBarAdded) {
         return;
       }
-      let status = this.statusBar.createEl('div', { cls: 'day-planner', title: 'View the Simple Day Planner', prepend: true});
       
-      this.setupCard(status);
-      this.statusBarText = status.createEl('span', { cls: ['status-bar-item-segment', 'day-planner-status-bar-text']});
+      this.statusBarText = this.statusBar.createEl('span', { cls: ['status-bar-item-segment', 'day-planner-status-bar-text']});
       
-      this.setupCircularProgressBar(status);
-      this.setupHorizontalProgressBar(status);
+      this.setupCircularProgressBar(this.statusBar);
+      this.setupHorizontalProgressBar(this.statusBar);
       
-      this.nextText = status.createEl('span', { cls: ['status-bar-item-segment', 'day-planner-status-bar-text']});
+      this.nextText = this.statusBar.createEl('span', { cls: ['status-bar-item-segment', 'day-planner-status-bar-text']});
       
-      this.setupStatusBarEvents(status);
+      this.setupStatusBarEvents(this.statusBar);
       this.statusBarAdded = true;
     }
 
-    private setupStatusBarEvents(status: HTMLDivElement) {
+    private setupStatusBarEvents(status: HTMLElement) {
       status.onClickEvent(async (ev: any) => {
           try {
               const fileName = this.file.todayPlannerFilePath();
@@ -59,13 +54,6 @@ export default class StatusBar {
           } catch (error) {
               console.log(error)
           }
-      });
-      status.on('mouseenter', '.day-planner', () => {
-        this.show(this.card);
-      });
-
-      status.on('mouseleave', '.day-planner', () => {
-        this.hide(this.card);
       });
     }
 
@@ -87,7 +75,7 @@ export default class StatusBar {
 
     show(el: HTMLElement) {
       if(el) {
-        el.style.display = 'block';
+        el.style.display = '';
       }
     }
 
@@ -146,12 +134,9 @@ export default class StatusBar {
         const statusText = (current.isBreak ? `${BREAK_LABEL} for ${minsText}` : `${minsText} left`);
         this.statusBarText.innerText = statusText;
       }
-      const currentTaskStatus = `Current Task (${percentageComplete.toFixed(0)}% complete)`;
       const currentTaskTimeAndText = `${current.rawTime} ${current.text}`;
       const nextTask = `Next Task (in ${minsText})`;
       const nextTaskTimeAndText = `${next.rawTime} ${next.text}`;
-      this.cardCurrent.innerHTML = `<strong>${currentTaskStatus}</strong><br> ${currentTaskTimeAndText}`;
-      this.cardNext.innerHTML = `<strong>${nextTask}</strong><br> ${nextTaskTimeAndText}`;
       this.taskNotification(current, currentTaskTimeAndText, nextTask, nextTaskTimeAndText);
     }
 
@@ -169,23 +154,14 @@ export default class StatusBar {
       return input.substring(0, limit) + '...';
     }
 
-    private setupHorizontalProgressBar(status: HTMLDivElement ) {
+    private setupHorizontalProgressBar(status: HTMLElement ) {
       this.statusBarProgress = status.createEl('div', { cls: ['status-bar-item-segment', 'day-planner-progress-bar']});
       this.statusBarProgress.style.display = 'none';
       this.statusBarCurrentProgress = this.statusBarProgress.createEl('div', { cls: 'day-planner-progress-value'});
     }
 
-    private setupCircularProgressBar(status: HTMLDivElement){
-      this.circle = status.createEl('div', {cls: ['status-bar-item-segment', 'progress-pie day-planner']});
-    }
-
-    private setupCard(status: HTMLDivElement) {
-      this.card = status.createEl('div', {cls: 'day-planner-status-card'});
-      this.cardCurrent = this.card.createEl('span');
-      this.card.createEl('br');
-      this.card.createEl('br');
-      this.cardNext = this.card.createEl('span');
-      this.card.createEl('div', {cls: 'arrow-down'});
+    private setupCircularProgressBar(status: HTMLElement){
+      this.circle = status.createEl('div', {cls: ['status-bar-item-segment', 'progress-pie day-planner-progress-pie']});
     }
 
 }
