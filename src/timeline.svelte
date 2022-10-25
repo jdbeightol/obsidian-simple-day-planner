@@ -81,6 +81,15 @@
 </script>
 
 {#if summary.items.length > 0}
+  <div id="scroll-controls">
+    <label for="auto-scroll">Track current time</label>
+    <input
+      id="auto-scroll"
+      type="checkbox"
+      class="toggle"
+      bind:checked={autoScroll}
+    />
+  </div>
   <div id="day-planner-timeline-container">
     <div
       class="aside aside-x{timelineZoomLevel} filled"
