@@ -365,7 +365,7 @@
     outline: none;
     border: none;
     cursor: pointer;
-    background-color: var(--background-secondary-alt);
+    background-color: var(--background-primary);
     transition: background-color ease 0.3s;
   }
 
@@ -376,7 +376,6 @@
     z-index: 2;
     width: 17px;
     height: 17px;
-    background: #fff;
     left: 2px;
     top: 1px;
     border-radius: 50%;
@@ -385,7 +384,7 @@
     font-weight: var(--font-bold);
     text-indent: -24px;
     word-spacing: 30px;
-    color: #fff;
+    background-color: var(--text-normal);
     text-shadow: -1px -1px rgba(0, 0, 0, 0.15);
     white-space: nowrap;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -393,7 +392,7 @@
   }
 
   #scroll-controls .toggle:checked {
-    background-color: var(--interactive-accent);
+    background-color: var(--background-modifier-success);
   }
 
   #scroll-controls .toggle:checked:before {
