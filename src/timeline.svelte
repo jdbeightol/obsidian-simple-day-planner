@@ -334,7 +334,6 @@
   }
 
   #scroll-controls {
-    /* background-color: var(--background-secondary); */
     position: sticky;
     bottom: 0;
     width: 100%;
