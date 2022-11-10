@@ -16,7 +16,6 @@
 
   const unsubSummary = planSummary.subscribe((val) => {
     summary = val;
-    updateTimelineMeterPosition();
   });
 
   const unsubPosition = nowPosition.subscribe((val) => {
@@ -65,12 +64,6 @@
     }
   }
 
-  function updateTimelineMeterPosition() {
-    timelineMeterPosition = summary.empty
-      ? 0
-      : summary.items.first().time.getMinutes() * timelineZoomLevel * -1 - 1;
-  }
-
   function shortClass(item: PlanItem) {
     return item.durationMins < 75 / timelineZoomLevel ? "short" : "";
   }
@@ -93,7 +86,6 @@
   <div id="day-planner-timeline-container">
     <div
       class="aside aside-x{timelineZoomLevel} filled"
-      style="top: {timelineMeterPosition}px;"
     >
       <div class="aside__line filled__line">
         <div class="filled__line__completed" style="height: {nowPosition}px;" />
