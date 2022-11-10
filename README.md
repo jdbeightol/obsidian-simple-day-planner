@@ -17,8 +17,11 @@ What does simple mean?
 - Uses your [daily Obsidian note][daily-note] to generate a day plan.
 - Status bar updates on progress with information on your current and next tasks. You can click on the status bar to access the note for today's day planner.
 - Timeline view showing your tasks laid out on a vertical timeline.
+- Improved support for Obsidian Light and Dark modes with and without translucent backgrounds
 
-![Day Planner Demo Image](https://raw.githubusercontent.com/jdbeightol/obsidian-simple-day-planner/main/images/day-planner-note-preview.png)
+|light | dark|
+|:----:|:---:|
+|![Day Planner Demo Image](https://raw.githubusercontent.com/jdbeightol/obsidian-simple-day-planner/main/images/day-planner-note-preview.png) | ![Day Planner Demo Image Dark](https://raw.githubusercontent.com/jdbeightol/obsidian-simple-day-planner/main/images/day-planner-note-preview-dark.png)|
 
 ## Installing
 
